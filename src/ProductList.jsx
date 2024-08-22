@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ProductList.css';
-import CartItem from './CartItem';
+import CartItem from './CartItem'; // Import the CartItem component
 import { useDispatch } from 'react-redux'; // Import useDispatch to dispatch actions
 import { addItem } from './CartSlice'; // Import addItem from CartSlice
 
@@ -11,7 +11,43 @@ function ProductList() {
     const dispatch = useDispatch(); // Initialize dispatch
 
     const plantsArray = [
-        // Your plants array data here
+        {
+            category: 'Indoor Plants',
+            plants: [
+                {
+                    name: 'Snake Plant',
+                    description: 'An easy-to-care-for houseplant.',
+                    cost: '$10',
+                    image: 'https://via.placeholder.com/150',
+                },
+                {
+                    name: 'Peace Lily',
+                    description: 'A beautiful flowering plant.',
+                    cost: '$15',
+                    image: 'https://via.placeholder.com/150',
+                },
+                // Add more plant objects as needed
+            ]
+        },
+        {
+            category: 'Outdoor Plants',
+            plants: [
+                {
+                    name: 'Rose',
+                    description: 'A fragrant flowering plant.',
+                    cost: '$12',
+                    image: 'https://via.placeholder.com/150',
+                },
+                {
+                    name: 'Sunflower',
+                    description: 'A tall, bright flower.',
+                    cost: '$8',
+                    image: 'https://via.placeholder.com/150',
+                },
+                // Add more plant objects as needed
+            ]
+        },
+        // Add more categories and plants as needed
     ];
 
     const handleAddToCart = (plant) => {
